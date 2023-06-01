@@ -7,7 +7,7 @@
     }
     const onClieckA= (e:Event)=>{
         e.preventDefault()
-        goto('testA', {replaceState:true})
+        goto('/testA', {replaceState:true})
     }
 </script>
 

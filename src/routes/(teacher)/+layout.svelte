@@ -1,13 +1,18 @@
-<script>
+<script lang="ts">
     import '../assets/css/layoutINV.css'
+    import {goto} from '$app/navigation'
+    const onClickOut = (e:Event)=>{
+        e.preventDefault()
+        goto('/',{replaceState:true})
+    }
 </script>
 <header>
-    <img src="/logo-social.png" alt="Logo">
+    <img src="logo-social.png" alt="Logo">
     <nav class="navegacion">
-        <a href="#">Inicio</a>
-        <a href="#">Jovenes investigadores</a>
-        <a href="#">Asistentes</a>
-        <button class="btnLogOut">Cerrar Sesión</button>
+        <a href="/homeTe">Inicio</a>
+        <a href="/studentI">Jovenes investigadores</a>
+        <a href="/studentA">Asistentes</a>
+        <button class="btnLogOut" on:click={onClickOut}>Cerrar Sesión</button>
     </nav> 
 </header>
 <slot/>
@@ -34,3 +39,4 @@
         </div>
     </div>
 </footer>
+

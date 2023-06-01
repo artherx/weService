@@ -1,5 +1,6 @@
 <script>
     import '../../assets/css/revisionJovenInvesAdmin.css'
+    import {goto} from '$app/navigation'
 </script>
 <h1>Revision de documentacion</h1>
     <h3> Seleccione postulado</h3>
