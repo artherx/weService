@@ -1,14 +1,16 @@
 <script lang="ts">
     import '../../assets/css/revicionasistentesadmin.css'
 	import type { StudentResponse } from "../../../domain/entities/student/StudentResponse";
-    import {goto} from '$app/navigation'
-
+    let buttomSave=false
+    let buttomUp=true
     let studentId= ''
-    let tipo= 'investigador'
+    let tipo= 'administrador'
+    let title = ''
     let texto= ''
+    let sel = 0
 
     function handleChange(event:Event) {
-        tipo = (event.target as HTMLSelectElement)?.value || ''; // Actualizar la variable con el valor seleccionado
+        title = (event.target as HTMLSelectElement)?.value || ''; // Actualizar la variable con el valor seleccionado
     }
     const onClickUser = async(e:Event)=>{
         e.preventDefault()
@@ -19,23 +21,38 @@
                 body: JSON.stringify({studentId,tipo})
             })
             const respuesta: StudentResponse = await student.json()
+            console.log("dio usuario.", respuesta.ok," ", studentId)
+            if (respuesta.ok) {
+                console.log("dio usuario.", respuesta.data?._id, " ", respuesta.data?.userName, respuesta.message)
+                buttomSave=true
+                return
+            }
         } catch (error) {
             console.error('Error al crear la sesión', error);
         }
+        
+    }
+    const onClieckSel = async(e:Event)=>{
+        e.preventDefault()
+        sel+=1
     }
 
 </script>
-
-<h1>Revision de documentacion</h1>
-<h3> Seleccione postulado</h3>
+<body>
 <div>
-    <div>
-        <input type="text" required bind:value={studentId}>
-        <button on:click={onClickUser}>save</button>
+    
+    <div class="CuadroTexto">
+        <h1>Revision de documentacion</h1>
+        <h3> Seleccione postulado</h3>
+        <div class="Boton">
+            <input type="text" required bind:value={studentId} disabled={buttomSave}>
+            <button on:click={onClickUser} disabled={buttomSave}>save</button>
+        </div>
+        
         
     </div>
-    <div>
-    <select name="archivos" id="archivos" bind:value={tipo} on:change={handleChange}>
+    <div class="DropDown">
+    <select name="archivos" id="archivos" bind:value={title} on:change={handleChange} disabled={buttomUp}>
         <option value="4 1464 IN-IV-F-26 Concertación de entregables según OPS">4 1464 IN-IV-F-26 Concertación de entregables según OPS</option>
         <option value="GA-GH-F-4 - Solicitud Orden y/o Contrato de Prestación de Servicios - V12">GA-GH-F-4 - Solicitud Orden y/o Contrato de Prestación de Servicios - V12</option>
         <option value="Cedula de ciudadania">Cedula de ciudadania</option>
@@ -61,10 +78,11 @@
     
     </div>
     <div>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-        <button>upload</button>
+        <textarea name="" id="" cols="30" rows="10" disabled={buttomUp}></textarea>
+        <button disabled={buttomUp}>upload</button>
     </div>
     <div>
-        <button>enviar</button>
+        <button disabled={buttomUp}>enviar</button>
     </div>
 </div>
+</body>

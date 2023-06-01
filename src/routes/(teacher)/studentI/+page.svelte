@@ -4,10 +4,11 @@
 
     let studentId= ''
     let tipo= 'investigador'
+    let title = ''
     let texto= ''
 
     function handleChange(event:Event) {
-        tipo = (event.target as HTMLSelectElement)?.value || ''; // Actualizar la variable con el valor seleccionado
+        title = (event.target as HTMLSelectElement)?.value || ''; // Actualizar la variable con el valor seleccionado
     }
     const onClickUser = async(e:Event)=>{
         e.preventDefault()
@@ -24,17 +25,21 @@
     }
 
 </script>
-
-<h1>Revision de documentacion</h1>
-<h3> Seleccione postulado</h3>
+<body>
 <div>
-    <div>
-        <input type="text" required bind:value={studentId}>
-        <button on:click={onClickUser}>save</button>
+    
+    <div class="CuadroTexto">
+        <h1>Revision de documentacion</h1>
+        <h3> Seleccione postulado</h3>
+        <div class="Boton">
+            <input type="text" required bind:value={studentId}>
+            <button on:click={onClickUser}>save</button>
+        </div>
+        
         
     </div>
-    <div>
-    <select name="archivos" id="archivos" bind:value={tipo} on:change={handleChange}>
+    <div class="DropDown">
+    <select name="archivos" id="archivos" bind:value={title} on:change={handleChange}>
         <option value="4 1464 IN-IV-F-26 Concertación de entregables según OPS">4 1464 IN-IV-F-26 Concertación de entregables según OPS</option>
         <option value="GA-GH-F-4 - Solicitud Orden y/o Contrato de Prestación de Servicios - V12">GA-GH-F-4 - Solicitud Orden y/o Contrato de Prestación de Servicios - V12</option>
         <option value="Cedula de ciudadania">Cedula de ciudadania</option>
@@ -67,3 +72,4 @@
         <button>enviar</button>
     </div>
 </div>
+</body>

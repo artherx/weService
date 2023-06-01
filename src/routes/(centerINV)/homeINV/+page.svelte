@@ -22,7 +22,7 @@
         </div>
         <div class="boton">
             <a href="/testA">
-                <img src="revision asistentes.jpeg" alt="revision asistentes"> 
+                <img src="/revision asistentes.jpeg" alt="revision asistentes"> 
                 <button class="BotonRev" on:click={onClieckA}>Revisión para asistentes</button>
             </a>
         </div>

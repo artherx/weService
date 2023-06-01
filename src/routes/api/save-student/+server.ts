@@ -9,6 +9,13 @@ export async function POST({request}) {
             role: tipoRole
         })
         await student.save()
+        if(student===null){
+            return json({
+                ok: false,
+                message: "Usuario o contraseña invalido",
+                data: student
+            })
+        }
         return json({
             ok: true,
             data:student,

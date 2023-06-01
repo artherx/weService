@@ -1,7 +1,7 @@
 import { json } from '@sveltejs/kit'
 import Student from '../../../db/models/Student.model.js'
 
-export async function POST({request}) {
+export async function POST({request}){
     const { studentId }= await request.json()
     try{
         const student = await Student.aggregate().match({
