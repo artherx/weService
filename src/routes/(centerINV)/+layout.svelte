@@ -7,7 +7,7 @@
     }
 </script>
 <header>
-    <img src="logo-social.png" alt="Logo">
+    <img src="/logo-social.png" alt="Logo">
     <nav class="navegacion">
         <a href="/homeINV">Inicio</a>
         <a href="/testI">Jovenes investigadores</a>

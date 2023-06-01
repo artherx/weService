@@ -26,15 +26,6 @@
 
 </script>
 
-<header>
-    <img src="ASSETS/IMG/logo-social.png" alt="Logo">
-    <nav class="navegacion">
-        <a href="InicioProf.html">Inicio</a>
-        <a href="EntregaJovenes.html">Jovenes investigadores</a>
-        <a href="EntregaAsistentes.html">Asistentes</a>
-        <button class="btnLogOut">Cerrar Sesión</button>
-    </nav> 
-</header>
 <h1>Revision de documentacion</h1>
 <h3> Seleccione postulado</h3>
 <div>

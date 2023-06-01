@@ -16,7 +16,7 @@
     <div class="Revision">
         <div class="boton">
             <a href="/testI">
-                <img src="revision jovenes investigadores.jpg" alt="revision jovenes asistentes">
+                <img src="/revision jovenes investigadores.jpg" alt="revision jovenes asistentes">
                 <button class="BotonRev" on:click={onClieckJI}>Revisión para jovenes investigadores</button>
             </a>
         </div>
