@@ -10,8 +10,8 @@
     <img src="/logo-social.png" alt="Logo">
     <nav class="navegacion">
         <a href="/homeINV">Inicio</a>
-        <a href="/testI">Jovenes investigadores</a>
-        <a href="/testA">Asistentes</a>
+        <a href="/restI">Jovenes investigadores</a>
+        <a href="/restA">Asistentes</a>
         <button class="btnLogOut" on:click={onClickOut}>Cerrar Sesión</button>
     </nav> 
 </header>

@@ -1,14 +1,15 @@
 import { json } from '@sveltejs/kit'
 import "../../../db/connection/mongo"
 import User from '../../../db/models/User.model.js'
+import type { RequestEvent } from './$types'
 
-export async function POST({ request }) {
+export async function POST({ request }:RequestEvent) {
     const { nombreUsuario, contraseña, role } = await request.json()
     try {
         const user = new User({
-            password: contraseña,
             userName: nombreUsuario,
-            role
+            password: contraseña,
+            role: role
         })
         await user.save()
         return json({

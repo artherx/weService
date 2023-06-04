@@ -1,5 +1,6 @@
 
 export interface UserModel {
+    _id?: string
     userName: string
     password: string
     createUs?: Date

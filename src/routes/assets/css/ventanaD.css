@@ -1,0 +1,84 @@
+#denegar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    width: 90%;
+    min-height: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.superior2{
+    display: flex;
+    border: 5px solid #264582;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+
+}
+.superior2 div{
+    width: 10px;
+    height: 100%;
+    background-color: #264582;
+}
+#titulo2{
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    height: 35px;
+    cursor: pointer;
+    transition: .5s;
+}
+#titulo2:hover{
+    border-top-left-radius: 10px;
+    background: #ffffff;
+
+}
+#titulo2 a{
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+}
+#titulo2 a:hover{
+    color: #264582;
+}
+a{
+    text-decoration: none;
+}
+#titulo-denegados2{
+    border-top-right-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+    width: 100%;
+    height: 35px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#titulo-denegados2 a{
+    color: #264582;
+    cursor: pointer;
+    transition: .5s;
+}
+#carta2 {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    height: 70px;
+    width: 80%;
+    background-color: rgba(220, 20, 60, 0.192);
+    
+}
+#carta2 img{
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+
+}
+#carta2 h6{
+    color: #264582;
+    font-size: larger;
+}

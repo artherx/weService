@@ -1,0 +1,84 @@
+
+#confirmados{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    width: 90%;
+    min-height: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.superior3{
+    display: flex;
+    border: 5px solid #264582;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+
+}
+.superior3 div{
+    width: 10px;
+    height: 100%;
+    background-color: #264582;
+}
+#titulo3{
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    height: 35px;
+    cursor: pointer;
+    transition: .5s;
+}
+#titulo3:hover{
+    background: #ffffff;
+
+}
+#titulo3 a{
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+}
+#titulo3 a:hover{
+    color: #264582;
+}
+a{
+    text-decoration: none;
+}
+#titulo-confirmar3{
+    background-color: #fff;
+    text-align: center;
+    width: 100%;
+    height: 35px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#titulo-confirmar3 a{
+    color: #264582;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#carta3 {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    height: 70px;
+    width: 80%;
+    background-color: #7fffd470;
+    
+}
+#carta3 img{
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+
+}
+#carta3 h6{
+    color: #264582;
+    font-size: larger;
+}

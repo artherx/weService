@@ -9,7 +9,7 @@ const DocumentoSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    texto: {
+    tipo: {
         type: String,
         require: true
     }

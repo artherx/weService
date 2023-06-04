@@ -1,7 +1,8 @@
 <script lang="ts">
     import {goto} from '$app/navigation'
 	import type { UserRespose } from '../../../domain/user/UserResponse';
-    import '../../assets/css/login.css'
+	import { profesor } from '../../../utils/stores/ProfesorStore';
+    import '../../assets/css/registre.css'
     let nombreUsuario = '';
     let contraseña = '';
     let rol = '';
@@ -41,6 +42,7 @@
                             console.log("No se registro el usuario.")
                             return
                         }
+                        profesor.set((responseRegister.data?._id) ? responseRegister.data?._id : "")
                         console.log('Sesión creada exitosamente');
                         // console.log('Datos de la sesión:', nuevaSesion);
                         if(rol==='teacher')
@@ -61,41 +63,40 @@
         }        
     }
 </script>
-<header>
-    <img src="/logo-social.png" alt="Logo UMNG">
-</header>
-<section>
-    <div class="izquierda">
+
+<img src="/logo-social.png" alt="Logo UMNG" id='R'>
+<section id='RS'>
+    <div class="izquierdaR">
         <h1>Universidad Militar Nueva Granada</h1>
         <span>El administrador se encarga de verificar los documentos enviados por el operador</span>
     </div>
-    <div class="derecha">
-        <div class="Iniciar-Sesion">
+    <div class="derechaR">
+        <div class="Iniciar-SesionR">
             <h2>Registrar sesión</h2>
             <form action="#">
-                <div class="login">
-                    <span class="iconos"><ion-icon name="person-circle"></ion-icon></span>
-                    <input id="userU" type="Usuario" required bind:value={nombreUsuario}/>
+                <div class="loginR">
+                    <span class="iconosR"><ion-icon name="person-circle"></ion-icon></span>
+                    <input id="userUR" type="Usuario" required bind:value={nombreUsuario}/>
                     <label for="userU" >Usuario</label>
                 </div>
-                <div class="login">
-                    <span class="iconos"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input id="passwordU" type="Contraseña" required bind:value={contraseña}/>
-                    <label for="passwordU">Contraseña</label>
+                <div class="loginR">
+                    <span class="iconosR"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input id="passwordUR" type="Contraseña" required bind:value={contraseña}/>
+                    <label for="passwordUR">Contraseña</label>
                 </div>
-                <div class="login">
-                    <span class="iconos"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input id="passwordU" type="Contraseña" required bind:value={confir}/>
+                <div class="loginR">
+                    <span class="iconosR"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input id="passwordUR" type="Contraseña" required bind:value={confir}/>
                     <label for="passwordU">Confirmar Contraseña</label>
                 </div>
-                <select name="menu" id="menu" bind:value={rol} on:change={handleChange}>
-                    <option value="admin"> administrador</option>
-                    <option value="teacher">profesor</option>
+                <select name="menu" id="menuR" bind:value={rol} on:change={handleChange}>
+                    <option value="adminR"> administrador</option>
+                    <option value="teacherR">profesor</option>
                 </select>
-                <button type="submit" class="btn" on:click={onClickUser}>Registrar sesión</button>
-                <div class="login-registro">
+                <button type="submit" class="btnR" on:click={onClickUser}>Registrar sesión</button>
+                <div class="login-registroR">
                     <p>
-                        ¿Ya tienes cuenta? <a href= "/" class="link-registro"> Inisie Sesion </a>
+                        ¿Ya tienes cuenta? <a href= "/" class="link-registroR"> Inicie Sesion </a>
                     </p>
                 </div>
             </form>

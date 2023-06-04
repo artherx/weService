@@ -3,9 +3,10 @@ import { comment } from "svelte/internal"
 import "../../../db/connection/mongo"
 import type { UserModel } from "../../../domain/user/UserModel"
 import User from "../../../db/models/User.model"
+import type { RequestEvent } from "./$types"
 
 
-export async function POST({ request }) {
+export async function POST({ request }:RequestEvent){
     try {
         const { nombreUsuario } = await request.json()
         const user = await User.findOne({ userName: nombreUsuario })

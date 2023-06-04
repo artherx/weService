@@ -5,13 +5,13 @@
     box-sizing: border-box;
     font-family: 'Poppins' , sans-serif;
 }
-#INV{
+#sectionHT{
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #D9D9D9;
 }
-.RevisionINV{
+.RevisionH{
     width: 90%;
     max-width: 100%;
     display: grid;
@@ -20,13 +20,13 @@
     align-items: center;
     margin-top: 10%;
 }
-.RevisionINV img {
+.RevisionH img {
     padding-top:15px;
     width: 80%;
     height: 220px;
     border-radius: 30px; 
 }
-.RevisionINV .BotonRevINV
+.RevisionH .BotonRevH
 {
     width: 400px;
     height: 30px;
@@ -43,7 +43,7 @@
     margin-bottom:10px;
     margin-top: 10px;
 }
-.RevisionINV .botonINV  {
+.RevisionH .botonH  {
     height: 300px;
     width: 500px;
     padding: 1px;
@@ -54,7 +54,7 @@
     
     
 }
-.RevisionINV .botonINV .BotonRevINV:hover
+.RevisionH .botonH .BotonRevH:hover
 {
     background: #264582;
     color: #fff;

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import '../assets/css/layoutINV.css'
+    import '../assets/css/layoutProf.css'
     import {goto} from '$app/navigation'
     const onClickOut = (e:Event)=>{
         e.preventDefault()
@@ -12,6 +12,7 @@
         <a href="/homeTe">Inicio</a>
         <a href="/studentI">Jovenes investigadores</a>
         <a href="/studentA">Asistentes</a>
+        <a href="/espera">Lista de espera</a>
         <button class="btnLogOut" on:click={onClickOut}>Cerrar Sesión</button>
     </nav> 
 </header>

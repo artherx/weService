@@ -1,7 +1,8 @@
 import { json } from '@sveltejs/kit'
 import User from '../../../db/models/User.model.js'
+import type { RequestEvent } from './$types.js'
 
-export async function POST({request}) {
+export async function POST({request}:RequestEvent) {
     const { nombreUsuario, contraseña}= await request.json()
     try{
         const user = await User.findOne({ userName: nombreUsuario, password:contraseña})

@@ -1,6 +1,6 @@
 import type { StudentModel } from "./StudentModel"
 
-export interface StudentResponse{
+export interface StudentResponse {
     ok: boolean
     message: string
     error?: string

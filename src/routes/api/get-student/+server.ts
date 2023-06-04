@@ -1,7 +1,8 @@
 import { json } from '@sveltejs/kit'
 import Student from '../../../db/models/Student.model.js'
+import type { RequestEvent } from './$types.js'
 
-export async function POST({request}){
+export async function POST({ request }:RequestEvent){
     const { studentId }= await request.json()
     try{
         const student = await Student.aggregate().match({
