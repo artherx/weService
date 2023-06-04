@@ -16,7 +16,7 @@
         }
     }
 </script>
-<section>
+<section class="contenido">
     <h6>apartado del postulado 1</h6>
     <div id="carta2">
         <a href="" download="">nombre documento</a>

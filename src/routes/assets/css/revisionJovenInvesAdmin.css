@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Russo+One&family=Stick+No+Bills:wght@200&display=swap');
 
-section{
+.contenido{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -16,7 +16,7 @@ section{
     background-color: #fff;
 }
 
-section h2{
+.contenido h2{
     margin-bottom: 20px;
 }
 

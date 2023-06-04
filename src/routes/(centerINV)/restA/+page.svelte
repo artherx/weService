@@ -7,7 +7,7 @@
         goto('/testA', {replaceState:true})
     }
 </script>
-<section>
+<section class="contenido">
     <h2>Revisión de jovenes asistentes</h2>
         <div id="carta" on:click={onClickStudent}>
             <img src="/logo contratacion.png" alt="postilado 1" width="20px" height="20px">
