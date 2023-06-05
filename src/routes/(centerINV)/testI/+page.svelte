@@ -1,4 +1,5 @@
 <script lang="ts">
+<<<<<<< HEAD
 	import '../../assets/css/revision_documentacion.css';
 	import { goto } from '$app/navigation';
 	import { estudianteP } from '../../../utils/stores/EstudianteStore';
