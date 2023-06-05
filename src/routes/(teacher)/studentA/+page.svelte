@@ -1,14 +1,12 @@
 <script lang="ts">
     import '../../assets/css/envioDocA.css'
 	import type { StudentResponse } from "../../../domain/entities/student/StudentResponse";
-	import type { UserRespose } from '../../../domain/user/UserResponse';
     import {goto} from '$app/navigation'
 	import { profesor } from '../../../utils/stores/ProfesorStore';
-    let buttomSave=false
+	import type { DocResponse } from '../../../domain/entities/doc/DocResponse';
     let buttomSave2=false
-    let buttomUp=true
-    let buttomEnv=true
-    let studentId= ''
+    let studentname= ''
+    let studentID= ''
     let tipo= 'asistente'
     let title = '4 1464 IN-IV-F-26 Concertación de entregables según OPS'
     let archivoS= 'sin archivo'
@@ -16,12 +14,10 @@
     let myProfesor='';
     let vectorCadenas: string[] = [];
     let textoArea = vectorCadenas.join('\n');
-    let disableHover = false
-    let disableHover1 = false
     
     function actualizarVector() {
     vectorCadenas = textoArea.split('\n');
-  }
+}
 
     profesor.subscribe((value) => {
         myProfesor = value
@@ -39,14 +35,15 @@
     const onClickUser = async(e:Event)=>{
         e.preventDefault()
         try {
-            console.log(myProfesor+"|"+ studentId+ "|"+ tipo)
+            console.log(myProfesor+"|"+ studentname+ "|"+ tipo)
             const student = await fetch('/api/save-student', {
                 method : "POST",
                 headers: { 'Content-Type': 'application/json'},
-                body: JSON.stringify({nombreStudent:studentId, tipoRole:tipo, profe:myProfesor})
+                body: JSON.stringify({nombreStudent:studentname, tipoRole:tipo, profe:myProfesor})
             })
             const respuesta: StudentResponse = await student.json()
             console.log(respuesta.ok ,"|",respuesta.message.toString,"|",respuesta.data?.userName)
+            studentID=(respuesta.data?._id !== undefined) ? respuesta.data?._id?.toString() : ""
             if (respuesta.ok) {
                 console.log("dio usuario.", respuesta.data?._id, " ", respuesta.data?.userName, respuesta.message)
                 return
@@ -57,15 +54,29 @@
         
     }
     const onClickSel = async (e: Event) => {
-        if(archivoS!=='sin archivo'){
+        if(studentname==''){
+            console.log('no se ha ingrasado un estudiante')
+            return
+        }
+        if(archivoS!='sin archivo'){
             e.preventDefault();
+
+            console.log('los datos son A: '+studentID+"|"+studentname+"|"+title+"|"+myProfesor+ "" +archivoS)
+            const documento = await fetch('/api/save-documents',
+            {
+                method : "POST",
+                headers: { 'Content-Type': 'application/json'},
+                body: JSON.stringify({studentid:studentID, student:studentname,titulo:archivoS,profe:myProfesor, tip: title})
+            })
+            const respuesta: any =await documento.json() as any
+            console.log('los datos son B: '+respuesta.data?.studentName+"|"+respuesta.data?.title+"|"+respuesta.data?.estado)
+
             archivoSelt = null;
             buttomSave2 = false;
             vectorCadenas.push(archivoS);
             vectorCadenas = [...vectorCadenas]
             textoArea=vectorCadenas.join('\n')
             archivoS = 'sin archivo'
-            console.log('se guardaron los doc ',{vectorCadenas});
         }
         else console.log('sin selecionar archivo');
 
@@ -83,7 +94,7 @@
         <h1>Revision de documentacion joven asistente</h1>
         <h3> Ingrese postulado</h3>
         <div class="Boton2">
-            <input type="text" bind:value={studentId} >
+            <input type="text" bind:value={studentname} >
             <button class="BotonSave2" on:click={onClickUser}>Guardar</button>
         </div>   
     </div>

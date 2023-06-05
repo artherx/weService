@@ -1,6 +1,6 @@
-import { json } from "@sveltejs/kit";
-import type { RequestEvent } from "../get-student/$types";
-import type { UserRespose } from "../../../domain/user/UserResponse";
+import { json } from "@sveltejs/kit"
+import "../../../db/connection/mongo"
+import type { RequestEvent } from "../get-student/$types"
 
 export async function POST({request}:RequestEvent) {
     const teacherId = request.json()

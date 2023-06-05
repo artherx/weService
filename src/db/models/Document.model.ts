@@ -5,13 +5,26 @@ const DocumentoSchema = new mongoose.Schema({
         type: String,
         require: true
     },
+    studentName: {
+        type: String,
+        require: true
+    },
+    profesorID:{
+        type: String,
+        require: true
+    },
     title:{
         type: String,
         require: true
     },
-    tipo: {
+    tipo:{
         type: String,
         require: true
+    },
+    estado: {
+        type: String,
+        require: true,
+        default: 'espera'
     }
 },
 {

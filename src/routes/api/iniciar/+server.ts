@@ -1,4 +1,5 @@
 import { json } from '@sveltejs/kit'
+import "../../../db/connection/mongo"
 import User from '../../../db/models/User.model.js'
 import type { RequestEvent } from './$types.js'
 

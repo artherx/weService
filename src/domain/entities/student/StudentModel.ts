@@ -1,5 +1,3 @@
-import type { DocModel } from "../doc/DocModel"
-
 export interface StudentModel{
     _id?:string
     userName: string

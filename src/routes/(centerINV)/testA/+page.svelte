@@ -1,12 +1,15 @@
 <script lang="ts">
     import '../../assets/css/revision_documentacion.css'
     import {goto} from '$app/navigation'
+	import { profesor } from '../../../utils/stores/ProfesorStore';
     let aprobarD= true
     let descartarD= true
+    
     const onClickA=(e:Event)=>{
         if(aprobarD){
             e.preventDefault(),
             descartarD=false
+
         }
     }
     const onClickD=(e:Event)=>{
