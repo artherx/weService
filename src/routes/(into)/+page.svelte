@@ -63,6 +63,7 @@
 					<label><input type="Checkbox" />Recordar Contraseña</label>
 					<a href="/">¿Se olvido la contraseña?</a>
 				</div>
+				
 				<button type="submit" class="btnlogin" on:click={onClickUser}>Iniciar sesión</button>
 				<div class="login-registro">
 					<p>

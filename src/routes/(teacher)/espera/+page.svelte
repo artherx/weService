@@ -2,12 +2,48 @@
 	import '../../assets/css/ventanaE.css';
 	let esprando = [
 		{
-			$oid: '647d1947aec551ce916818b9',
-			studentId: '647d1941aec551ce916818b7',
-			studentName: 'fghgvc',
+			_id: '647d48f25607f965ce16f7e1',
+			studentId: '647d47355607f965ce16f7d7',
+			studentName: 'gutierreas',
+			profesorID: '6477cb8c13ec7c201fd4d51d',
+			title: 'CV-JUANGUIZA-SPANISH.pdf',
+			tipo: 'Formato de Seguridad Social',
+			estado: 'denegado'
+		},
+		{
+			_id: '647d48de5607f965ce16f7df',
+			studentId: '647d47355607f965ce16f7d7',
+			studentName: 'gutierreas',
+			profesorID: '6477cb8c13ec7c201fd4d51d',
+			title: 'Atributos jardinerito.pdf',
+			tipo: 'Certificado de Antescedentes Policia Nacional',
+			estado: 'espera'
+		},
+		{
+			_id: '647d48ac5607f965ce16f7dd',
+			studentId: '647d47355607f965ce16f7d7',
+			studentName: 'gutierreas',
+			profesorID: '6477cb8c13ec7c201fd4d51d',
+			title: 'fase div 5-8.pdf',
+			tipo: 'Tarjeta profesional',
+			estado: 'espera'
+		},
+		{
+			_id: '647d47545607f965ce16f7db',
+			studentId: '647d47355607f965ce16f7d7',
+			studentName: 'gutierreas',
+			profesorID: '6477cb8c13ec7c201fd4d51d',
+			title: 'DISEÑO 2 contenido curso 2023-1 semana 1.pdf',
+			tipo: 'GA-GH-F-4 - Solicitud Orden y/o Contrato de Prestación de Servicios - V12',
+			estado: 'confirmado'
+		},
+		{
+			_id: '647d47465607f965ce16f7d9',
+			studentId: '647d47355607f965ce16f7d7',
+			studentName: 'gutierreas',
 			profesorID: '6477cb8c13ec7c201fd4d51d',
 			title: 'Certificado+electoral.pdf',
-			tipo: 'formato de justificación',
+			tipo: 'Diploma de grado',
 			estado: 'espera'
 		},
 		{
@@ -17,9 +53,65 @@
 			profesorID: '6477cb8c13ec7c201fd4d51d',
 			title: 'Proyecto libreriaa.pdf',
 			tipo: 'pantallazo requisición univex',
+			estado: 'denegado'
+		},
+		{
+			id: '647d1947aec551ce916818b9',
+			studentId: '647d1941aec551ce916818b7',
+			studentName: 'fghgvc',
+			profesorID: '6477cb8c13ec7c201fd4d51d',
+			title: 'Certificado+electoral.pdf',
+			tipo: 'formato de justificación',
+			estado: 'confirmado'
+		},
+		{
+			_id: '647d46cc5607f965ce16f7cb',
+			studentId: '647d46c75607f965ce16f7c9',
+			studentName: 'ramiroi',
+			profesorID: '6477cb8c13ec7c201fd4d51d',
+			title: 'fase div 8-8.pdf',
+			tipo: 'Hoja de vida ',
+			estado: 'denegado'
+		},
+		{
+			_id: '647d46da5607f965ce16f7cd',
+			studentId: '647d46c75607f965ce16f7c9',
+			studentName: 'ramiroi',
+			profesorID: '6477cb8c13ec7c201fd4d51d',
+			title: 'fase div 8-8.pdf',
+			tipo: 'Certificado de Antescedentes Policia Nacional',
+			estado: 'espera'
+		},
+		{
+			_id: '647d46e45607f965ce16f7cf',
+			studentId: '647d46c75607f965ce16f7c9',
+			studentName: 'ramiroi',
+			profesorID: '6477cb8c13ec7c201fd4d51d',
+			title: 'METODOS MATEMATICOS 2019-2.pdf',
+			tipo: 'declaración de no inhabilidades, incompatibilidades ',
+			estado: 'espera'
+		},
+		{
+			_id: '647d46ec5607f965ce16f7d1',
+			studentId: '647d46c75607f965ce16f7c9',
+			studentName: 'ramiroi',
+			profesorID: '6477cb8c13ec7c201fd4d51d',
+			title: 'fase div 4-8.pdf',
+			tipo: 'declaración de no inhabilidades, incompatibilidades ',
+			estado: 'confirmado'
+		},
+		{
+			_id: '647d47145607f965ce16f7d3',
+			studentId: '647d46c75607f965ce16f7c9',
+			studentName: 'ramiroi',
+			profesorID: '6477cb8c13ec7c201fd4d51d',
+			title: 'organizing page content.pdf',
+			tipo: 'declaración de no inhabilidades, incompatibilidades ',
 			estado: 'espera'
 		}
 	];
+    let apunta = 'espera';
+	let newvo = esprando.filter((objeto) => objeto.estado === apunta);
 </script>
 
 <section id="espera">
@@ -36,8 +128,11 @@
 			<a href="/denegados"><h3>denegados</h3></a>
 		</div>
 	</div>
+    {#each newvo as espero}
 	<div id="carta1">
 		<img src="/logo contratacion.png" alt="postilado 1" width="20px" height="20px" />
-		<h6>camilo andres ramirez</h6>
+		<h6>{espero.studentName+" | "+ espero.title+" | "+espero.tipo}</h6>
+        
 	</div>
+    {/each}
 </section>

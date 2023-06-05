@@ -27,22 +27,34 @@
 			role: 'asistente'
 		},
 		{
-			_id: '647d122b14eaefd31018e3ee',
-			userName: 'carolina',
+			_id: '647d47355607f965ce16f7d7',
+			userName: 'gutierreas',
 			profesor_id: '6477cb8c13ec7c201fd4d51d',
-			role: 'investigador'
+			role: 'asistente'
+		},
+		{
+			_id: '647d46c75607f965ce16f7c9',
+			userName: 'ramiroi',
+			profesor_id: '6477cb8c13ec7c201fd4d51d',
+			role: 'asistente'
+		},
+		{
+			_id: '647d1941aec551ce916818b7',
+			userName: 'fghgvc',
+			profesor_id: '6477cb8c13ec7c201fd4d51d',
+			role: 'asistente'
 		}
 	];
-    
 
 	profesor.subscribe((value) => {
 		profesorip = value;
 	});
 	console.log(profesorip + '|' + '|asistente');
-	const onClickStudent = async (e: Event) => {
+	const onClickStudent = async (e: Event, obt: any) => {
 		e.preventDefault();
 		try {
-			
+            estudianteP.set(obt);
+            console.log(obt); 
 			goto('/testA', { replaceState: true });
 		} catch (error) {
 			console.error('Error al crear la sesión', error);
@@ -52,10 +64,10 @@
 
 <section class="contenido">
 	<h2>Revisión de jovenes asistentes</h2>
-    {#each estudiantes as estudiante}
-	<div id="carta" on:click={onClickStudent}>
-		<img src="/logo contratacion.png" alt="postilado 1" width="20px" height="20px" />
-		<h6>{estudiante.userName}</h6>
-	</div>
-    {/each}
+	{#each estudiantes as estudiante}
+		<div id="carta" on:click={(e) => onClickStudent(e, estudiante._id)}>
+			<img src="/logo contratacion.png" alt="postilado 1" width="20px" height="20px" />
+			<h6>{estudiante.userName}</h6>
+		</div>
+	{/each}
 </section>

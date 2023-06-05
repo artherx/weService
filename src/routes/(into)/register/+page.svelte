@@ -90,8 +90,8 @@
                     <label for="passwordU">Confirmar Contraseña</label>
                 </div>
                 <select name="menu" id="menuR" bind:value={rol} on:change={handleChange}>
-                    <option value="adminR"> administrador</option>
-                    <option value="teacherR">profesor</option>
+                    <option value="admin"> administrador</option>
+                    <option value="teacher">profesor</option>
                 </select>
                 <button type="submit" class="btnR" on:click={onClickUser}>Registrar sesión</button>
                 <div class="login-registroR">
