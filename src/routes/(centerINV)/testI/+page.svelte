@@ -51,9 +51,6 @@
   "title": "fase div 4-8.pdf",
   "tipo": "declaración de no inhabilidades, incompatibilidades ",
   "estado": "espera",
-        },
-        {
-            
         }
     ]
     const onClickA=(e:Event)=>{
